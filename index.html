@@ -6,7 +6,23 @@
 
   <title>Victor Miracle | Graphic & UI/UX Designer</title>
 
+  <meta name="description"
+        content="Victor Miracle — Graphic Designer and UI/UX & Front-End Designer. Explore selected graphic design and digital interface projects.">
+
   <style>
+    :root {
+      --navy: #071827;
+      --navy-2: #0b2235;
+      --cyan: #18d5d1;
+      --cyan-light: #6ff7f0;
+      --white: #ffffff;
+      --text: #dce7ee;
+      --muted: #8fa3b3;
+      --line: rgba(255,255,255,0.09);
+      --card: rgba(255,255,255,0.045);
+      --dark: #04111d;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -19,9 +35,10 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #07131f;
-      color: #fff;
+      background: var(--navy);
+      color: var(--white);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -30,99 +47,203 @@
     }
 
     img {
+      width: 100%;
       display: block;
-      max-width: 100%;
     }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
 
     header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 1000;
-      background: rgba(7, 19, 31, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(7, 24, 39, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
-    nav {
-      max-width: 1150px;
-      height: 75px;
+    .nav {
+      width: min(1180px, 92%);
       margin: auto;
-      padding: 0 25px;
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: 1px;
+      gap: 12px;
     }
 
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border: 2px solid #19d6c4;
+    .vm-logo {
+      width: 46px;
+      height: 46px;
+      border: 2px solid var(--cyan);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #19d6c4;
-      font-size: 14px;
+      color: var(--cyan);
       font-weight: 900;
+      font-size: 16px;
+      letter-spacing: -2px;
+      box-shadow: 0 0 20px rgba(24,213,209,0.15);
     }
 
-    .nav-links {
+    .brand-text strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    .brand-text span {
+      color: var(--cyan);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    nav {
       display: flex;
-      gap: 28px;
-      list-style: none;
-      color: #c6d0d9;
-      font-size: 14px;
+      gap: 30px;
+      align-items: center;
     }
 
-    .nav-links a:hover {
-      color: #19d6c4;
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s;
     }
+
+    nav a:hover {
+      color: var(--cyan);
+    }
+
+    .nav-contact {
+      border: 1px solid var(--cyan);
+      padding: 9px 17px;
+      border-radius: 30px;
+      color: var(--cyan);
+    }
+
+    .nav-contact:hover {
+      background: var(--cyan);
+      color: var(--navy);
+    }
+
+    /* =========================
+       GENERAL
+    ========================== */
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section-label {
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+
+    .section-subtitle {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
 
     .hero {
-      min-height: 100vh;
-      max-width: 1150px;
-      margin: auto;
-      padding: 130px 25px 70px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      min-height: calc(100vh - 78px);
+      display: flex;
       align-items: center;
-      gap: 50px;
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(24,213,209,0.11), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(24,213,209,0.06), transparent 30%);
     }
 
-    .hero-small {
-      color: #19d6c4;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 9px 15px;
+      border-radius: 30px;
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan);
     }
 
     .hero h1 {
-      font-size: clamp(45px, 7vw, 82px);
-      line-height: 0.98;
-      letter-spacing: -4px;
+      font-size: clamp(54px, 8vw, 100px);
+      line-height: 0.9;
+      letter-spacing: -6px;
       margin-bottom: 25px;
     }
 
     .hero h1 span {
-      color: #19d6c4;
+      color: var(--cyan);
     }
 
-    .hero p {
-      color: #aebbc7;
-      max-width: 560px;
-      font-size: 17px;
+    .hero-title {
+      font-size: clamp(19px, 2vw, 25px);
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 16px;
       margin-bottom: 32px;
     }
 
@@ -133,284 +254,545 @@
     }
 
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 14px 23px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 14px;
+      border: 1px solid transparent;
       transition: 0.3s;
-      display: inline-block;
+      cursor: pointer;
     }
 
     .btn-primary {
-      background: #19d6c4;
-      color: #06131e;
+      background: var(--cyan);
+      color: var(--navy);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
+      background: var(--cyan-light);
+      transform: translateY(-2px);
     }
 
     .btn-outline {
-      border: 1px solid #334554;
-      color: #fff;
+      border-color: var(--line);
+      color: var(--white);
+      background: rgba(255,255,255,0.03);
     }
 
     .btn-outline:hover {
-      border-color: #19d6c4;
-      color: #19d6c4;
+      border-color: var(--cyan);
+      color: var(--cyan);
     }
 
+    /* HERO PHOTO */
+
     .hero-photo {
-      display: flex;
-      justify-content: center;
+      position: relative;
+      max-width: 470px;
+      margin-left: auto;
     }
 
     .photo-frame {
-      width: min(390px, 90vw);
-      aspect-ratio: 4 / 5;
-      border-radius: 25px;
+      position: relative;
+      border-radius: 30px;
       overflow: hidden;
-      border: 1px solid rgba(25,214,196,0.5);
-      background: #0d202e;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      border: 1px solid rgba(24,213,209,0.25);
+      background: var(--navy-2);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.35);
     }
 
     .photo-frame img {
-      width: 100%;
-      height: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
     }
 
-    section {
-      padding: 100px 25px;
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(4,17,29,0.35),
+        transparent 45%
+      );
+      pointer-events: none;
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
+    .vm-floating {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 2px solid var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -3px;
+      bottom: -25px;
+      left: -35px;
+      z-index: 3;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
     }
 
-    .section-label {
-      color: #19d6c4;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+    /* =========================
+       WHAT I DO
+    ========================== */
+
+    .services {
+      background: var(--dark);
     }
 
-    .section-title {
-      font-size: clamp(32px, 5vw, 52px);
-      line-height: 1.05;
-      margin-bottom: 45px;
-      letter-spacing: -2px;
-    }
-
-    .skills,
-    .about {
-      background: #0a1927;
-    }
-
-    .skill-grid {
+    .service-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      gap: 24px;
+      margin-top: 55px;
     }
 
-    .skill-card {
-      padding: 35px;
-      min-height: 220px;
-      border: 1px solid #203444;
-      border-radius: 18px;
-      background: #0c1d2c;
-      transition: 0.3s;
+    .service-card {
+      min-height: 270px;
+      padding: 38px;
+      border: 1px solid var(--line);
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.055),
+        rgba(255,255,255,0.015)
+      );
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: 0.35s;
     }
 
-    .skill-card:hover,
-    .work-card:hover {
+    .service-card:hover {
       transform: translateY(-6px);
-      border-color: #19d6c4;
+      border-color: rgba(24,213,209,0.5);
     }
 
-    .skill-number {
-      color: #19d6c4;
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 35px;
+    .service-number {
+      color: var(--cyan);
+      font-size: 13px;
+      margin-bottom: 50px;
     }
 
-    .skill-card h3 {
-      font-size: 27px;
-      margin-bottom: 10px;
+    .service-card h3 {
+      font-size: 29px;
+      margin-bottom: 12px;
     }
 
-    .skill-card p {
-      color: #9eacb8;
+    .service-card p {
+      color: var(--muted);
+      max-width: 450px;
+    }
+
+    .service-icon {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      font-size: 60px;
+      opacity: 0.06;
+      font-weight: 900;
+    }
+
+    /* =========================
+       WORK
+    ========================== */
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 50px;
     }
 
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
-    .work-card {
-      background: #0c1d2c;
-      border: 1px solid #203444;
-      border-radius: 18px;
+    .work-item {
+      border-radius: 20px;
       overflow: hidden;
-      transition: 0.3s;
+      background: var(--navy-2);
+      border: 1px solid var(--line);
+      transition: 0.35s;
+    }
+
+    .work-item:hover {
+      transform: translateY(-5px);
+      border-color: rgba(24,213,209,0.5);
     }
 
     .work-image {
-      width: 100%;
-      aspect-ratio: 16 / 10;
       overflow: hidden;
-      background: #102535;
+      background: #101010;
     }
 
     .work-image img {
       width: 100%;
       height: 100%;
+      min-height: 330px;
       object-fit: cover;
       transition: 0.5s;
     }
 
-    .work-card:hover .work-image img {
-      transform: scale(1.04);
+    .work-item:hover img {
+      transform: scale(1.025);
     }
 
     .work-info {
-      padding: 22px;
+      padding: 20px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
     .work-info h3 {
-      font-size: 21px;
+      font-size: 18px;
+    }
+
+    .work-info span {
+      color: var(--cyan);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* FEATURED FINTECH */
+
+    .featured-work {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      background: var(--navy-2);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .featured-work img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: cover;
+    }
+
+    .featured-info {
+      padding: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .featured-info h3 {
+      font-size: 28px;
       margin-bottom: 5px;
     }
 
-    .work-info p {
-      color: #19d6c4;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .featured-info p {
+      color: var(--muted);
+    }
+
+    .tag {
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      border-radius: 30px;
+      padding: 8px 14px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about {
+      background: var(--dark);
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
     }
 
     .about-photo {
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
-      border: 1px solid #203444;
+      border: 1px solid var(--line);
     }
 
     .about-photo img {
-      width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
     }
 
-    .about-text h3 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      color: #aebbc7;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact-box {
-      max-width: 800px;
-      margin: auto;
-      padding: 55px 30px;
-      border: 1px solid #203444;
-      border-radius: 22px;
-      background: #0c1d2c;
-    }
-
-    .contact-box h2 {
-      font-size: clamp(32px, 5vw, 50px);
-      margin-bottom: 15px;
-    }
-
-    .contact-box p {
-      color: #9eacb8;
-      margin-bottom: 30px;
-    }
-
-    .contact-number {
-      display: block;
-      color: #19d6c4;
-      font-size: 20px;
-      font-weight: 700;
+    .about-copy h2 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1;
       margin-bottom: 25px;
     }
 
-    footer {
-      border-top: 1px solid #203444;
-      padding: 30px 25px;
-      text-align: center;
-      color: #71808d;
+    .about-copy p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool {
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      color: var(--text);
+      background: rgba(255,255,255,0.025);
       font-size: 13px;
     }
 
-    @media (max-width: 800px) {
-      .nav-links {
+    .tool:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* =========================
+       PROJECT REQUEST
+    ========================== */
+
+    .contact {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(24,213,209,0.09), transparent 30%),
+        var(--navy);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(42px, 6vw, 75px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      max-width: 450px;
+      margin-bottom: 30px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-details a {
+      color: var(--cyan);
+    }
+
+    .project-form {
+      padding: 32px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 17px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.18);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 13px 14px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(24,213,209,0.07);
+    }
+
+    .field textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .field select option {
+      background: var(--navy);
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      background: var(--dark);
+    }
+
+    .footer-inner {
+      width: min(1180px, 92%);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      nav {
         display: none;
       }
 
-      nav {
-        height: 65px;
-      }
-
       .hero {
+        padding: 65px 0 90px;
+      }
+
+      .hero-grid {
         grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 110px;
+        gap: 55px;
       }
 
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
+      .hero h1 {
+        font-size: clamp(55px, 17vw, 85px);
       }
 
       .hero-photo {
-        order: -1;
+        margin: auto;
+        width: 88%;
       }
 
-      .photo-frame {
-        width: 260px;
-        height: 330px;
+      .vm-floating {
+        left: -15px;
       }
 
-      .skill-grid,
+      .service-grid,
       .work-grid,
-      .about-grid {
+      .about-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-text {
-        text-align: center;
+      .work-header {
+        display: block;
+      }
+
+      .work-header .section-subtitle {
+        margin-top: 15px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        gap: 40px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .featured-info {
+        display: block;
+      }
+
+      .featured-info .tag {
+        display: inline-block;
+        margin-top: 15px;
       }
 
       section {
-        padding: 75px 20px;
+        padding: 80px 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      .brand-text span {
+        font-size: 8px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .service-card {
+        padding: 28px;
+      }
+
+      .work-image img {
+        min-height: 250px;
+      }
+
+      .project-form {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -418,105 +800,153 @@
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
-    <nav>
-      <a href="#home" class="logo">
-        <div class="logo-mark">VM</div>
-        <span>VICTOR MIRACLE</span>
+    <div class="nav">
+
+      <a href="#home" class="brand">
+        <div class="vm-logo">VM</div>
+
+        <div class="brand-text">
+          <strong>VICTOR MIRACLE</strong>
+          <span>GRAPHIC & UI/UX DESIGNER</span>
+        </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-contact">Let's Talk</a>
+      </nav>
+
+    </div>
   </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <main>
 
     <section class="hero" id="home">
 
-      <div class="hero-content">
+      <div class="container">
 
-        <div class="hero-small">
-          Graphic & UI/UX Designer
+        <div class="hero-grid">
+
+          <div class="hero-content">
+
+            <div class="availability">
+              <span class="dot"></span>
+              Available for projects
+            </div>
+
+            <h1>
+              Victor<br>
+              <span>Miracle.</span>
+            </h1>
+
+            <div class="hero-title">
+              Graphic Designer & UI/UX / Front-End Designer
+            </div>
+
+            <p class="hero-description">
+              I create visual designs and digital interfaces that look clean,
+              modern and professional.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#work" class="btn btn-primary">
+                View My Work
+              </a>
+
+              <a href="https://wa.me/2347065273868"
+                 class="btn btn-outline"
+                 target="_blank">
+                WhatsApp Me
+              </a>
+            </div>
+
+          </div>
+
+
+          <div class="hero-photo">
+
+            <div class="photo-frame">
+              <img
+                src="victor-miracle.jpg"
+                alt="Victor Miracle">
+            </div>
+
+            <div class="vm-floating">
+              VM
+            </div>
+
+          </div>
+
         </div>
 
-        <h1>
-          VICTOR<br>
-          <span>MIRACLE.</span>
-        </h1>
-
-        <p>
-          I create visual designs and digital interfaces that are clean,
-          modern and built to communicate.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#work" class="btn btn-primary">
-            View My Work
-          </a>
-
-          <a href="https://wa.me/2347065273868" class="btn btn-outline">
-            WhatsApp Me
-          </a>
-        </div>
-
-      </div>
-
-      <div class="hero-photo">
-        <div class="photo-frame">
-          <img
-            src="victor-miracle.jpg""
-            alt="Victor Miracle"
-          >
-        </div>
       </div>
 
     </section>
 
-    <section class="skills" id="skills">
+
+    <!-- =========================
+         WHAT I DO
+    ========================== -->
+
+    <section class="services">
 
       <div class="container">
 
-        <div class="section-label">
-          What I Do
-        </div>
+        <div class="section-label">What I Do</div>
 
         <h2 class="section-title">
           Two skills.<br>
-          One focus.
+          One creative vision.
         </h2>
 
-        <div class="skill-grid">
+        <p class="section-subtitle">
+          I focus on visual communication and digital experiences.
+        </p>
 
-          <div class="skill-card">
-            <div class="skill-number">
-              01 / GRAPHIC DESIGN
-            </div>
+
+        <div class="service-grid">
+
+          <div class="service-card">
+
+            <div class="service-number">01 / GRAPHIC DESIGN</div>
 
             <h3>Graphic Design</h3>
 
             <p>
-              Visual designs for brands, businesses, products,
-              advertising and digital platforms.
+              Posters, social media graphics, branding materials,
+              advertisements and other visual designs.
             </p>
+
+            <div class="service-icon">GD</div>
+
           </div>
 
-          <div class="skill-card">
-            <div class="skill-number">
-              02 / UI/UX & FRONT-END
-            </div>
+
+          <div class="service-card">
+
+            <div class="service-number">02 / DIGITAL DESIGN</div>
 
             <h3>UI/UX & Front-End Design</h3>
 
             <p>
-              Modern digital interfaces designed with usability,
-              clean layouts and strong visual direction.
+              Clean interfaces and responsive digital experiences
+              designed for modern websites and applications.
             </p>
+
+            <div class="service-icon">UI</div>
+
           </div>
 
         </div>
@@ -524,89 +954,126 @@
       </div>
 
     </section>
+
+
+    <!-- =========================
+         WORK
+    ========================== -->
 
     <section id="work">
 
       <div class="container">
 
-        <div class="section-label">
-          Selected Work
+        <div class="work-header">
+
+          <div>
+            <div class="section-label">Selected Work</div>
+
+            <h2 class="section-title">
+              Work that<br>
+              speaks visually.
+            </h2>
+          </div>
+
+          <p class="section-subtitle">
+            A selection of graphic design and digital interface work.
+          </p>
+
         </div>
 
-        <h2 class="section-title">
-          My Work.
-        </h2>
+
+        <!-- FINTECH -->
+
+        <div class="featured-work">
+
+          <img
+            src="./fintech-real.jpg"
+            alt="Fintech UI/UX Design">
+
+          <div class="featured-info">
+
+            <div>
+              <h3>Fintech Wallet UI</h3>
+
+              <p>
+                UI/UX & Front-End Design
+              </p>
+            </div>
+
+            <span class="tag">
+              UI / UX
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- GRAPHIC WORK -->
 
         <div class="work-grid">
 
-          <div class="work-card">
-            <div class="work-image">
-              <img
-                src="./fintech-real.jpg"
-                alt="Fintech UI Design"
-              >
-            </div>
+          <div class="work-item">
 
-            <div class="work-info">
-              <h3>Fintech Mobile UI</h3>
-              <p>UI/UX Design</p>
-            </div>
-          </div>
-
-          <div class="work-card">
             <div class="work-image">
               <img
                 src="graphic-01.jpg"
-                alt="Graphic Design Work"
-              >
+                alt="Graphic Design Project 01">
             </div>
 
             <div class="work-info">
-              <h3>Creative Graphic Design</h3>
-              <p>Graphic Design</p>
+              <h3>Graphic Design</h3>
+              <span>01</span>
             </div>
+
           </div>
 
-          <div class="work-card">
+
+          <div class="work-item">
+
             <div class="work-image">
               <img
                 src="graphic-02.jpg"
-                alt="Graphic Design Services"
-              >
+                alt="Graphic Design Project 02">
             </div>
 
             <div class="work-info">
-              <h3>Business Promotion Design</h3>
-              <p>Graphic Design</p>
+              <h3>Graphic Design</h3>
+              <span>02</span>
             </div>
+
           </div>
 
-          <div class="work-card">
+
+          <div class="work-item">
+
             <div class="work-image">
               <img
                 src="graphic-03.jpg"
-                alt="Product Graphic Design"
-              >
+                alt="Ginger Lemon IndiPop Design">
             </div>
 
             <div class="work-info">
-              <h3>Product Advertisement</h3>
-              <p>Graphic Design</p>
+              <h3>Product Design</h3>
+              <span>03</span>
             </div>
+
           </div>
 
-          <div class="work-card">
+
+          <div class="work-item">
+
             <div class="work-image">
               <img
                 src="graphic-04.jpg"
-                alt="Business Graphic Design"
-              >
+                alt="Al-Qaim Graphics Design">
             </div>
 
             <div class="work-info">
-              <h3>Brand & Business Design</h3>
-              <p>Graphic Design</p>
+              <h3>Brand Design</h3>
+              <span>04</span>
             </div>
+
           </div>
 
         </div>
@@ -614,6 +1081,11 @@
       </div>
 
     </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
     <section class="about" id="about">
 
@@ -622,32 +1094,39 @@
         <div class="about-grid">
 
           <div class="about-photo">
+
             <img
               src="victor-miracle.jpg"
-              alt="Victor Miracle, Graphic and UI/UX Designer"
-            >
+              alt="Victor Miracle">
+
           </div>
 
-          <div class="about-text">
 
-            <div class="section-label">
-              About Me
+          <div class="about-copy">
+
+            <div class="section-label">About Me</div>
+
+            <h2>
+              I turn ideas<br>
+              into visuals.
+            </h2>
+
+            <p>
+              I'm Victor Miracle, a Graphic Designer and UI/UX &
+              Front-End Designer focused on creating clean,
+              modern and useful digital and visual experiences.
+            </p>
+
+            <div class="tools">
+
+              <span class="tool">CorelDRAW</span>
+              <span class="tool">Figma</span>
+              <span class="tool">Photoshop</span>
+              <span class="tool">Illustrator</span>
+              <span class="tool">HTML</span>
+              <span class="tool">CSS</span>
+
             </div>
-
-            <h3>
-              I turn ideas into visuals and interfaces.
-            </h3>
-
-            <p>
-              I'm Victor Miracle, a Graphic Designer and
-              UI/UX & Front-End Designer focused on creating
-              clean and modern digital experiences.
-            </p>
-
-            <p>
-              My work combines strong visual design with
-              practical digital interfaces.
-            </p>
 
           </div>
 
@@ -657,37 +1136,176 @@
 
     </section>
 
+
+    <!-- =========================
+         PROJECT REQUEST
+    ========================== -->
+
     <section class="contact" id="contact">
 
       <div class="container">
 
-        <div class="contact-box">
+        <div class="contact-grid">
 
-          <div class="section-label">
-            Let's Work
+          <div class="contact-copy">
+
+            <div class="section-label">
+              Start a Project
+            </div>
+
+            <h2>
+              Have a project<br>
+              in mind?
+            </h2>
+
+            <p>
+              Tell me what you need and I'll get back to you.
+            </p>
+
+            <div class="contact-details">
+
+              <div>
+                Email:
+                <a href="mailto:miraclev188@gmail.com">
+                  miraclev188@gmail.com
+                </a>
+              </div>
+
+              <div>
+                WhatsApp:
+                <a
+                  href="https://wa.me/2347065273868"
+                  target="_blank">
+                  07065273868
+                </a>
+              </div>
+
+            </div>
+
           </div>
 
-          <h2>
-            Have a project?
-          </h2>
 
-          <p>
-            Let's create something clean, useful and memorable.
-          </p>
+          <!-- PROJECT FORM -->
 
-          <a
-            href="https://wa.me/2347065273868"
-            class="contact-number"
-          >
-            07065273868
-          </a>
+          <form
+            class="project-form"
+            action="mailto:miraclev188@gmail.com"
+            method="post"
+            enctype="text/plain">
 
-          <a
-            href="https://wa.me/2347065273868"
-            class="btn btn-primary"
-          >
-            Chat on WhatsApp
-          </a>
+            <div class="form-row">
+
+              <div class="field">
+
+                <label for="name">
+                  Your Name
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="Name"
+                  placeholder="Enter your name"
+                  required>
+
+              </div>
+
+
+              <div class="field">
+
+                <label for="email">
+                  Your Email
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="Email"
+                  placeholder="you@example.com"
+                  required>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="service">
+                What do you need?
+              </label>
+
+              <select
+                id="service"
+                name="Service"
+                required>
+
+                <option value="">
+                  Select a service
+                </option>
+
+                <option value="Graphic Design">
+                  Graphic Design
+                </option>
+
+                <option value="UI/UX & Front-End Design">
+                  UI/UX & Front-End Design
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="budget">
+                Budget (Optional)
+              </label>
+
+              <input
+                type="text"
+                id="budget"
+                name="Budget"
+                placeholder="e.g. ₦50,000">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="details">
+                Tell me about your project
+              </label>
+
+              <textarea
+                id="details"
+                name="Project Details"
+                placeholder="What would you like me to design?"
+                required></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%; border:none;">
+
+              Send Project Request
+
+            </button>
+
+            <p class="form-note">
+              Your request will be prepared as an email to
+              miraclev188@gmail.com.
+            </p>
+
+          </form>
 
         </div>
 
@@ -697,8 +1315,25 @@
 
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    © 2026 Victor Miracle. All rights reserved.
+
+    <div class="footer-inner">
+
+      <p>
+        © 2026 Victor Miracle. All rights reserved.
+      </p>
+
+      <div class="footer-brand">
+        VM
+      </div>
+
+    </div>
+
   </footer>
 
 </body>
