@@ -178,14 +178,12 @@ nav a:hover{
 
 /* ================= HERO ================= */
 
+/* FIXED: removed the full-screen min-height so the extra space is gone.
+   To adjust the space, change the padding: top 40px, bottom 50px. */
 .hero{
-  min-height:calc(100vh - 78px);
-
-  /* REDUCED TOP AND BOTTOM SPACE */
-  padding:35px 0 55px;
-
-  display:flex;
-  align-items:center;
+  min-height:auto;
+  padding:40px 0 50px;
+  display:block;
 
   background:
   radial-gradient(
@@ -221,7 +219,6 @@ nav a:hover{
   color:var(--text);
   font-size:12px;
 
-  /* REDUCED GAP BELOW */
   margin-bottom:14px;
 }
 
@@ -238,7 +235,6 @@ nav a:hover{
   line-height:.86;
   letter-spacing:-6px;
 
-  /* REDUCED GAP BELOW */
   margin-bottom:18px;
 }
 
@@ -772,8 +768,7 @@ footer{
   }
 
   .hero{
-    min-height:auto;
-    padding:30px 0 65px;
+    padding:30px 0 50px;
   }
 
   .hero-grid{
@@ -862,7 +857,7 @@ footer{
   /* EXTRA COMPACT MOBILE HERO */
 
   .hero{
-    padding:25px 0 55px;
+    padding:25px 0 45px;
   }
 
   .hero-grid{
