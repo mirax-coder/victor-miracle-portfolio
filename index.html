@@ -1,95 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#071A2B" />
-  <title>Victor Miracle — Graphic &amp; UI/UX Designer</title>
-  <meta name="description" content="Victor Miracle is a Graphic & UI/UX Designer creating clean digital experiences, user interfaces, brand identities and visual designs." />
-  <meta property="og:title" content="Victor Miracle — Graphic &amp; UI/UX Designer" />
-  <meta property="og:description" content="Clean digital experiences, meaningful brands and user-friendly products." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Victor Miracle | Graphic & UI/UX Designer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07131f;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 19, 31, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav {
+      max-width: 1150px;
+      height: 75px;
+      margin: auto;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 2px solid #19d6c4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #19d6c4;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      color: #c6d0d9;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #19d6c4;
+    }
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1150px;
+      margin: auto;
+      padding: 130px 25px 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-small {
+      color: #19d6c4;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #19d6c4;
+    }
+
+    .hero p {
+      color: #aebbc7;
+      max-width: 560px;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 23px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #19d6c4;
+      color: #06131e;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid #334554;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: #19d6c4;
+      color: #19d6c4;
+    }
+
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-frame {
+      width: min(390px, 90vw);
+      aspect-ratio: 4 / 5;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid rgba(25,214,196,0.5);
+      background: #0d202e;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 100px 25px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #19d6c4;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 45px;
+      letter-spacing: -2px;
+    }
+
+    .skills,
+    .about {
+      background: #0a1927;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 35px;
+      min-height: 220px;
+      border: 1px solid #203444;
+      border-radius: 18px;
+      background: #0c1d2c;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover,
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: #19d6c4;
+    }
+
+    .skill-number {
+      color: #19d6c4;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 35px;
+    }
+
+    .skill-card h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #9eacb8;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .work-card {
+      background: #0c1d2c;
+      border: 1px solid #203444;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .work-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #102535;
+    }
+
+    .work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .work-card:hover .work-image img {
+      transform: scale(1.04);
+    }
+
+    .work-info {
+      padding: 22px;
+    }
+
+    .work-info h3 {
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .work-info p {
+      color: #19d6c4;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #203444;
+    }
+
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .about-text h3 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #aebbc7;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 55px 30px;
+      border: 1px solid #203444;
+      border-radius: 22px;
+      background: #0c1d2c;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(32px, 5vw, 50px);
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #9eacb8;
+      margin-bottom: 30px;
+    }
+
+    .contact-number {
+      display: block;
+      color: #19d6c4;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      border-top: 1px solid #203444;
+      padding: 30px 25px;
+      text-align: center;
+      color: #71808d;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      nav {
+        height: 65px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 110px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-photo {
+        order: -1;
+      }
+
+      .photo-frame {
+        width: 260px;
+        height: 330px;
+      }
+
+      .skill-grid,
+      .work-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="progress-track"><span id="scrollProgress"></span></div>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Victor Miracle home">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21.5"/><path d="M10.5 14.5 19.7 34 24 25.5 28.3 34 37.5 14.5M18.4 14.5 24 25.5 29.6 14.5"/></svg></span>
-        <span class="brand-name">Victor <b>Miracle</b><small>Graphic &amp; UI/UX Designer</small></span>
+
+  <header>
+    <nav>
+      <a href="#home" class="logo">
+        <div class="logo-mark">VM</div>
+        <span>VICTOR MIRACLE</span>
       </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a>
-      </div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero section-dark" aria-labelledby="heroTitle">
-      <div class="hero-noise" aria-hidden="true"></div>
-      <div class="wrap hero-inner">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> GRAPHIC &amp; UI/UX DESIGNER <span class="eyebrow-line"></span></p>
-          <h1 id="heroTitle">I design <em>graphics</em> and digital experiences<span class="cyan-period">.</span></h1>
-          <p class="hero-intro">Graphic Designer + UI/UX &amp; Front-End Designer.</p>
-          <div class="hero-actions"><a class="button button-cyan" href="#projects">View My Work <span>↗</span></a><a class="text-link light-link" href="#contact">Let’s Work Together <span>↗</span></a></div>
-          <div class="hero-meta"><span><i class="availability-dot"></i> Available for select projects</span><span class="hero-location">Based in Nigeria</span></div>
+
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <div class="hero-small">
+          Graphic & UI/UX Designer
         </div>
-        <div class="hero-art hero-photo-art reveal">
-          <div class="hero-photo-frame"><img src="assets/victor-miracle.jpg" alt="Victor Miracle, Graphic Designer and UI/UX Designer" /></div>
-          <div class="hero-photo-label"><span>VICTOR MIRACLE</span><small>GRAPHIC DESIGN · UI/UX</small></div>
-          <div class="hero-work-card"><img src="assets/fintech-real.jpg" alt="Fintech UI design preview" /><span>SELECTED WORK ↗</span></div>
+
+        <h1>
+          VICTOR<br>
+          <span>MIRACLE.</span>
+        </h1>
+
+        <p>
+          I create visual designs and digital interfaces that are clean,
+          modern and built to communicate.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">
+            View My Work
+          </a>
+
+          <a href="https://wa.me/2347065273868" class="btn btn-outline">
+            WhatsApp Me
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img
+            src="assets/victor-miralce.jpg"
+            alt="Victor Miracle"
+          >
         </div>
       </div>
-      <div class="hero-bottom wrap"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>INDEPENDENT DESIGNER · 2026</span></div>
+
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="wrap">
-        <div class="section-heading reveal"><p class="eyebrow dark-eyebrow">ABOUT ME <span class="heading-number">01 / 04</span></p><h2>Victor <em>Miracle.</em></h2></div>
-        <div class="about-grid">
-          <div class="portrait-wrap reveal"><div class="portrait-frame"><img class="portrait-photo" src="assets/victor-miracle.jpg" alt="Victor Miracle, Graphic and UI/UX Designer" loading="lazy" /><div class="portrait-tag">VICTOR MIRACLE <span>✳</span></div></div></div>
-          <div class="about-copy reveal"><p class="lead">Graphic Designer focused on strong visual communication and UI/UX &amp; front-end design.</p><p>I prefer showing the work instead of over-explaining it.</p>
-            <div class="about-mini-line">Graphic Design · UI/UX &amp; Front-End</div></div>
+    <section class="skills" id="skills">
+
+      <div class="container">
+
+        <div class="section-label">
+          What I Do
+        </div>
+
+        <h2 class="section-title">
+          Two skills.<br>
+          One focus.
+        </h2>
+
+        <div class="skill-grid">
+
+          <div class="skill-card">
+            <div class="skill-number">
+              01 / GRAPHIC DESIGN
+            </div>
+
+            <h3>Graphic Design</h3>
+
+            <p>
+              Visual designs for brands, businesses, products,
+              advertising and digital platforms.
+            </p>
           </div>
+
+          <div class="skill-card">
+            <div class="skill-number">
+              02 / UI/UX & FRONT-END
+            </div>
+
+            <h3>UI/UX & Front-End Design</h3>
+
+            <p>
+              Modern digital interfaces designed with usability,
+              clean layouts and strong visual direction.
+            </p>
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="section skills-section soft-section" id="skills"><div class="wrap"><div class="section-heading reveal"><p class="eyebrow dark-eyebrow">WHAT I DO <span class="heading-number">02 / 04</span></p><h2>Two skills.<br/><em>One focus.</em></h2></div>
-      <div class="skills-layout"><div class="skill-grid reveal">
-        <article class="skill-item"><span class="skill-icon"><svg viewBox="0 0 32 32"><path d="M5 7h22v18H5zM9 11h14M9 16h9M9 21h12"/></svg></span><span>01</span><h3>Graphic Design</h3><p>Visual designs for digital and print.</p></article>
-        <article class="skill-item"><span class="skill-icon"><svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="3"/><path d="M11 9h10M11 14h10M11 19h6M20 24h.1"/></svg></span><span>02</span><h3>UI/UX &amp; Front-End</h3><p>Interfaces designed and built for the web.</p></article>
-      </div><aside class="tools-panel reveal"><p class="eyebrow dark-eyebrow">TOOLS</p><h3>Tools I<br/><em>create with.</em></h3><div class="tool-list"><div class="tool-card"><span class="tool-logo figma">F</span><span>Figma</span><span class="tool-arrow">↗</span></div><div class="tool-card"><span class="tool-logo ps">Ps</span><span>Adobe Photoshop</span><span class="tool-arrow">↗</span></div><div class="tool-card"><span class="tool-logo ai">Ai</span><span>Adobe Illustrator</span><span class="tool-arrow">↗</span></div><div class="tool-card"><span class="tool-logo corel">C</span><span>CorelDRAW</span><span class="tool-arrow">↗</span></div></div></aside></div>
-    </div></section>
+    <section id="work">
 
-<section class="section work-section section-dark" id="work"><div class="wrap"><div class="projects-heading reveal"><div class="section-heading"><p class="eyebrow">SELECTED WORK <span class="heading-number">03 / 04</span></p><h2>Let the work<br/><em>speak.</em></h2></div><p class="projects-intro">Graphic design and UI/UX work — shown visually, with less talk.</p></div>
+      <div class="container">
 
-      <div class="work-feature reveal"><div class="work-feature-copy"><span class="project-category">UI/UX + FRONT-END DESIGN</span><h3>Fintech<br/><em>Banking Interface</em></h3><p>Selected screens from a mobile banking interface.</p></div><div class="work-feature-image"><img src="assets/fintech-real.jpg" alt="Victor Miracle fintech banking interface design" loading="lazy"></div></div>
+        <div class="section-label">
+          Selected Work
+        </div>
 
-      <div class="work-block reveal"><div class="work-block-head"><div><span class="project-category">GRAPHIC DESIGN</span><h3>Selected visual work</h3></div><span class="work-count">04 GRAPHICS</span></div><div class="visual-gallery">
-        <figure class="gallery-item gallery-wide"><img src="assets/graphic-01.jpg" alt="Graphic design project" loading="lazy"><figcaption>Graphic Design</figcaption></figure>
-        <figure class="gallery-item"><img src="assets/graphic-02.jpg" alt="Graphic design project" loading="lazy"><figcaption>Social Media Design</figcaption></figure>
-        <figure class="gallery-item"><img src="assets/graphic-03.jpg" alt="Product advertising design" loading="lazy"><figcaption>Advertising Design</figcaption></figure>
-        <figure class="gallery-item"><img src="assets/graphic-04.jpg" alt="Graphic design and branding project" loading="lazy"><figcaption>Brand / Graphic Design</figcaption></figure>
-      </div></div>
+        <h2 class="section-title">
+          My Work.
+        </h2>
 
-      <div class="work-bottom reveal"><span>MORE WORK COMING</span><a href="#contact" class="text-link light-link">Work with me <span>↗</span></a></div>
-    </div></section>
+        <div class="work-grid">
 
-    <section class="section mini-about soft-section"><div class="wrap mini-about-grid"><div class="mini-photo reveal"><img src="assets/victor-miracle.jpg" alt="Victor Miracle" loading="lazy"></div><div class="mini-about-copy reveal"><p class="eyebrow dark-eyebrow">THE DESIGNER <span class="heading-number">04 / 04</span></p><h2>Victor <em>Miracle.</em></h2><p>Graphic Designer · UI/UX &amp; Front-End Designer</p></div></div></section>
+          <div class="work-card">
+            <div class="work-image">
+              <img
+                src="assets/Finetech-real.jpg"
+                alt="Fintech UI Design"
+              >
+            </div>
 
-<section class="section contact-section" id="contact"><div class="wrap"><div class="contact-header reveal"><p class="eyebrow dark-eyebrow">CONTACT <span class="heading-number">LET’S TALK</span></p><h2>Let’s make<br/><em>something.</em></h2><p>Send me a message about your next design project.</p></div><div class="contact-grid"><form class="contact-form reveal" id="contactForm"><div class="form-heading"><h3>Start a project.</h3><span>* Required fields</span></div><div class="form-row"><label>Your name *<input name="name" type="text" placeholder="e.g. Alex Morgan" required /></label><label>Email address *<input name="email" type="email" placeholder="you@example.com" required /></label></div><label>Project type<select name="project" required><option value="" disabled selected>Select a service</option><option>UI/UX Design</option><option>Graphic Design</option><option>Brand Identity</option><option>Something else</option></select></label><label>Tell me about your project *<textarea name="message" rows="5" placeholder="A little context, goals, timeline or anything you'd like me to know..." required></textarea></label><button class="button button-dark submit-button" type="submit">Send Message <span>↗</span></button><p class="form-note">This opens WhatsApp with your message ready to send.</p></form><aside class="contact-aside reveal"><div class="contact-aside-top"><span class="contact-orbit">VM</span><p>Have a question, an idea, or just want to say hello? My inbox is open.</p></div><div class="contact-methods"><a class="contact-method" href="https://wa.me/2347065273868" target="_blank" rel="noopener"><span class="contact-method-icon">↗</span><span><small>WHATSAPP</small><b>07065273868</b></span><span class="method-arrow">↗</span></a><a class="contact-method" href="tel:+2347065273868"><span class="contact-method-icon">⌕</span><span><small>PHONE</small><b>07065273868</b></span><span class="method-arrow">↗</span></a><a class="contact-method email-method" href="mailto:miraclev188@gmail.com"><span class="contact-method-icon">✉</span><span><small>EMAIL</small><b>miraclev188@gmail.com</b></span><span class="method-arrow">↗</span></a></div><div class="contact-availability"><i></i> Available for freelance opportunities</div></aside></div></div></section>
+            <div class="work-info">
+              <h3>Fintech Mobile UI</h3>
+              <p>UI/UX Design</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img
+                src="assets/graphic-01.jpg"
+                alt="Graphic Design Work"
+              >
+            </div>
+
+            <div class="work-info">
+              <h3>Creative Graphic Design</h3>
+              <p>Graphic Design</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img
+                src="assets/graphic-02.jpg"
+                alt="Graphic Design Services"
+              >
+            </div>
+
+            <div class="work-info">
+              <h3>Business Promotion Design</h3>
+              <p>Graphic Design</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img
+                src="assets/graphic-03.jpg"
+                alt="Product Graphic Design"
+              >
+            </div>
+
+            <div class="work-info">
+              <h3>Product Advertisement</h3>
+              <p>Graphic Design</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img
+                src="assets/graphic-04.jpg"
+                alt="Business Graphic Design"
+              >
+            </div>
+
+            <div class="work-info">
+              <h3>Brand & Business Design</h3>
+              <p>Graphic Design</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-photo">
+            <img
+              src="assets/victor-miralce.jpg"
+              alt="Victor Miracle, Graphic and UI/UX Designer"
+            >
+          </div>
+
+          <div class="about-text">
+
+            <div class="section-label">
+              About Me
+            </div>
+
+            <h3>
+              I turn ideas into visuals and interfaces.
+            </h3>
+
+            <p>
+              I'm Victor Miracle, a Graphic Designer and
+              UI/UX & Front-End Designer focused on creating
+              clean and modern digital experiences.
+            </p>
+
+            <p>
+              My work combines strong visual design with
+              practical digital interfaces.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="section-label">
+            Let's Work
+          </div>
+
+          <h2>
+            Have a project?
+          </h2>
+
+          <p>
+            Let's create something clean, useful and memorable.
+          </p>
+
+          <a
+            href="https://wa.me/2347065273868"
+            class="contact-number"
+          >
+            07065273868
+          </a>
+
+          <a
+            href="https://wa.me/2347065273868"
+            class="btn btn-primary"
+          >
+            Chat on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer class="site-footer"><div class="wrap"><div class="footer-main"><a class="brand footer-brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21.5"/><path d="M10.5 14.5 19.7 34 24 25.5 28.3 34 37.5 14.5M18.4 14.5 24 25.5 29.6 14.5"/></svg></span><span class="brand-name">Victor <b>Miracle</b><small>Graphic &amp; UI/UX Designer</small></span></a><p>Thoughtful design for a world<br/>that never stops moving.</p></div><div class="footer-bottom"><span>© 2026 Victor Miracle. All rights reserved.</span><div><a href="#top">Back to top ↑</a><span>Designed with intent <b>✳</b></span></div></div></div></footer>
+  <footer>
+    © 2026 Victor Miracle. All rights reserved.
+  </footer>
 
-  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-backdrop" data-close-modal></div><div class="modal-panel"><button class="modal-close" aria-label="Close case study" data-close-modal>×</button><div class="modal-kicker" id="modalKicker">PROJECT / CASE STUDY</div><h2 id="modalTitle">Project title</h2><p class="modal-intro" id="modalIntro"></p><div class="modal-meta" id="modalMeta"></div><div class="modal-content" id="modalContent"></div><div class="modal-footer"><span>VICTOR MIRACLE · DESIGN PORTFOLIO</span><button class="text-link" data-close-modal>Close case study ×</button></div></div></div>
-  <script src="script.js"></script>
 </body>
 </html>
