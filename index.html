@@ -1293,41 +1293,36 @@ footer{
         action="mailto:miraclev188@gmail.com"
         method="post"
         enctype="text/plain">
+<!-- NAME -->
+<div class="field">
+  <label for="name">Your Name</label>
 
-        <div class="form-row">
-
-          <div class="field">
-
-            <label for="name">
-              Your Name
-            </label>
-
-            <input
-              type="text"
-              id="name"
-              name="Name"
-              placeholder="Your name"
-              required>
-
-          </div>
+  <input
+    type="text"
+    id="name"
+    name="Name"
+    placeholder="Your name"
+    autocomplete="name"
+    inputmode="text"
+    required>
+</div>
 
 
-          <div class="field">
+<!-- EMAIL -->
+<div class="field">
+  <label for="email">Your Email</label>
 
-            <label for="email">
-              Your Email
-            </label>
-
-            <input
-              type="email"
-              id="email"
-              name="Email"
-              placeholder="you@example.com"
-              required>
-
-          </div>
-
-        </div>
+  <input
+    type="email"
+    id="email"
+    name="Email"
+    placeholder="you@example.com"
+    autocomplete="email"
+    inputmode="email"
+    autocapitalize="none"
+    spellcheck="false"
+    required>
+</div>
 
 
         <div class="field">
