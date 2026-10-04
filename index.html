@@ -6,10 +6,10 @@
 
 <title>Victor Miracle | Graphic & UI/UX Designer</title>
 
-<meta name="description"
-content="Victor Miracle — Graphic Designer and UI/UX & Front-End Designer.">
+<meta name="description" content="Victor Miracle — Graphic Designer and UI/UX & Front-End Designer.">
 
 <style>
+
 :root{
   --navy:#061522;
   --navy2:#0b2233;
@@ -56,9 +56,7 @@ img{
   margin:auto;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
@@ -78,8 +76,6 @@ header{
   justify-content:space-between;
   gap:25px;
 }
-
-/* VM BRAND */
 
 .brand{
   display:flex;
@@ -116,8 +112,6 @@ header{
   letter-spacing:1.5px;
   margin-top:2px;
 }
-
-/* RIGHT SIDE */
 
 .nav-right{
   display:flex;
@@ -182,18 +176,28 @@ nav a:hover{
   font-size:12px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
   min-height:calc(100vh - 78px);
-  padding:70px 0 80px;
+
+  /* REDUCED TOP AND BOTTOM SPACE */
+  padding:35px 0 55px;
+
   display:flex;
   align-items:center;
+
   background:
-    radial-gradient(circle at 80% 30%,rgba(24,213,209,.13),transparent 30%),
-    radial-gradient(circle at 5% 90%,rgba(24,213,209,.07),transparent 30%);
+  radial-gradient(
+    circle at 80% 30%,
+    rgba(24,213,209,.13),
+    transparent 30%
+  ),
+  radial-gradient(
+    circle at 5% 90%,
+    rgba(24,213,209,.07),
+    transparent 30%
+  );
 }
 
 .hero-grid{
@@ -207,13 +211,18 @@ nav a:hover{
   display:inline-flex;
   align-items:center;
   gap:9px;
-  padding:8px 14px;
+
+  padding:7px 13px;
+
   border:1px solid var(--line);
   background:var(--card);
   border-radius:30px;
+
   color:var(--text);
   font-size:12px;
-  margin-bottom:22px;
+
+  /* REDUCED GAP BELOW */
+  margin-bottom:14px;
 }
 
 .dot{
@@ -228,7 +237,9 @@ nav a:hover{
   font-size:clamp(60px,8vw,105px);
   line-height:.86;
   letter-spacing:-6px;
-  margin-bottom:25px;
+
+  /* REDUCED GAP BELOW */
+  margin-bottom:18px;
 }
 
 .hero h1 span{
@@ -284,9 +295,7 @@ nav a:hover{
   color:var(--cyan);
 }
 
-/* =========================
-   PROFILE
-========================= */
+/* ================= PROFILE ================= */
 
 .hero-profile{
   position:relative;
@@ -352,24 +361,27 @@ nav a:hover{
   z-index:5;
   left:-30px;
   bottom:-28px;
+
   width:105px;
   height:105px;
+
   border-radius:50%;
   background:var(--navy);
   border:2px solid var(--cyan);
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   color:var(--cyan);
   font-size:28px;
   font-weight:900;
   letter-spacing:-4px;
+
   box-shadow:0 15px 35px rgba(0,0,0,.45);
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= GENERAL SECTIONS ================= */
 
 section{
   padding:85px 0;
@@ -396,9 +408,7 @@ section{
   color:var(--muted);
 }
 
-/* =========================
-   SERVICES
-========================= */
+/* ================= SERVICES ================= */
 
 .services{
   background:var(--dark);
@@ -416,12 +426,15 @@ section{
 .service-card{
   min-height:235px;
   padding:32px;
+
   border:1px solid var(--line);
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.055),
-    rgba(255,255,255,.015)
-  );
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
   border-radius:20px;
   transition:.3s;
   position:relative;
@@ -450,9 +463,7 @@ section{
   max-width:500px;
 }
 
-/* =========================
-   WORK
-========================= */
+/* ================= WORK ================= */
 
 .work-header{
   display:flex;
@@ -478,9 +489,11 @@ section{
 
 .featured-info{
   padding:22px 25px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   gap:20px;
 }
 
@@ -537,6 +550,7 @@ section{
 
 .work-info{
   padding:16px 20px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -551,9 +565,7 @@ section{
   font-size:11px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ================= ABOUT ================= */
 
 .about{
   background:var(--dark);
@@ -604,15 +616,18 @@ section{
   font-size:12px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* ================= CONTACT ================= */
 
 .contact{
   padding-top:90px;
   padding-bottom:90px;
+
   background:
-    radial-gradient(circle at 90% 10%,rgba(24,213,209,.1),transparent 30%),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(24,213,209,.1),
+      transparent 30%
+    ),
     var(--navy);
 }
 
@@ -648,6 +663,7 @@ section{
 
 .project-form{
   padding:28px;
+
   border:1px solid var(--line);
   background:rgba(255,255,255,.04);
   border-radius:22px;
@@ -675,10 +691,13 @@ section{
 .field textarea{
   width:100%;
   padding:12px 13px;
+
   border:1px solid var(--line);
   border-radius:9px;
+
   background:rgba(0,0,0,.2);
   color:white;
+
   outline:none;
 }
 
@@ -703,9 +722,7 @@ section{
   margin-top:10px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
   padding:25px 0;
@@ -716,6 +733,7 @@ footer{
 .footer-inner{
   width:min(1180px,92%);
   margin:auto;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -733,9 +751,7 @@ footer{
   letter-spacing:-3px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
@@ -756,12 +772,13 @@ footer{
   }
 
   .hero{
-    padding:60px 0 80px;
+    min-height:auto;
+    padding:30px 0 65px;
   }
 
   .hero-grid{
     grid-template-columns:1fr;
-    gap:55px;
+    gap:45px;
   }
 
   .hero-profile{
@@ -808,6 +825,8 @@ footer{
   }
 }
 
+/* ================= MOBILE ================= */
+
 @media(max-width:520px){
 
   .brand-text strong{
@@ -840,6 +859,33 @@ footer{
     padding:70px 0;
   }
 
+  /* EXTRA COMPACT MOBILE HERO */
+
+  .hero{
+    padding:25px 0 55px;
+  }
+
+  .hero-grid{
+    gap:40px;
+  }
+
+  .availability{
+    margin-bottom:12px;
+    padding:7px 12px;
+  }
+
+  .hero h1{
+    margin-bottom:16px;
+  }
+
+  .hero-title{
+    margin-bottom:12px;
+  }
+
+  .hero-description{
+    margin-bottom:24px;
+  }
+
   .service-card{
     min-height:210px;
     padding:27px;
@@ -862,574 +908,750 @@ footer{
     flex-direction:column;
     gap:8px;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header>
 
-  <div class="nav">
+<div class="nav">
 
-    <a href="#home" class="brand">
+<a href="#home" class="brand">
 
-      <div class="vm-logo">VM</div>
+<div class="vm-logo">
+VM
+</div>
 
-      <div class="brand-text">
-        <strong>VICTOR MIRACLE</strong>
-        <span>GRAPHIC & UI/UX DESIGNER</span>
-      </div>
+<div class="brand-text">
 
-    </a>
+<strong>VICTOR MIRACLE</strong>
 
-    <div class="nav-right">
+<span>
+GRAPHIC & UI/UX DESIGNER
+</span>
 
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-      </nav>
+</div>
 
-      <!-- CLIENT BUTTON -->
-      <a href="#contact" class="client-button">
+</a>
 
-        <span class="client-dot"></span>
 
-        <span class="client-text">
-          <small>AVAILABLE</small>
-          <strong>Let's Work Together →</strong>
-        </span>
+<div class="nav-right">
 
-      </a>
+<nav>
 
-    </div>
+<a href="#home">
+Home
+</a>
 
-  </div>
+<a href="#work">
+Work
+</a>
+
+<a href="#about">
+About
+</a>
+
+</nav>
+
+
+<a href="#contact" class="client-button">
+
+<span class="client-dot"></span>
+
+<span class="client-text">
+
+<small>
+AVAILABLE
+</small>
+
+<strong>
+Let's Work Together →
+</strong>
+
+</span>
+
+</a>
+
+</div>
+
+</div>
 
 </header>
 
 
-<!-- HERO -->
 <main>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-  <div class="container">
+<div class="container">
 
-    <div class="hero-grid">
-
-      <div>
-
-        <div class="availability">
-          <span class="dot"></span>
-          Available for projects
-        </div>
-
-        <h1>
-          Victor<br>
-          <span>Miracle.</span>
-        </h1>
-
-        <div class="hero-title">
-          Graphic Designer & UI/UX / Front-End Designer
-        </div>
-
-        <p class="hero-description">
-          I create clean visual designs and modern digital
-          interfaces that help ideas stand out.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#work" class="btn btn-primary">
-            View My Work
-          </a>
-
-          <a
-            href="https://wa.me/2347065273868"
-            target="_blank"
-            class="btn btn-outline">
-            WhatsApp Me
-          </a>
-
-        </div>
-
-      </div>
+<div class="hero-grid">
 
 
-      <!-- PROFILE -->
+<div>
 
-      <div class="hero-profile">
+<div class="availability">
 
-        <div class="profile-card">
+<span class="dot"></span>
 
-          <img
-            src="victor-miracle.jpg"
-            alt="Victor Miracle">
+Available for projects
 
-          <div class="profile-info">
+</div>
 
-            <div class="profile-vm">
-              VM
-            </div>
 
-            <strong>Victor Miracle</strong>
+<h1>
 
-            <span>
-              GRAPHIC & UI/UX DESIGNER
-            </span>
+Victor<br>
 
-          </div>
+<span>
+Miracle.
+</span>
 
-        </div>
+</h1>
 
-        <div class="vm-badge">
-          VM
-        </div>
 
-      </div>
+<div class="hero-title">
 
-    </div>
+Graphic Designer & UI/UX / Front-End Designer
 
-  </div>
+</div>
+
+
+<p class="hero-description">
+
+I create clean visual designs and modern digital
+interfaces that help ideas stand out.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#work" class="btn btn-primary">
+
+View My Work
+
+</a>
+
+
+<a
+href="https://wa.me/2347065273868"
+target="_blank"
+class="btn btn-outline">
+
+WhatsApp Me
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-profile">
+
+<div class="profile-card">
+
+<img
+src="victor-miracle.jpg"
+alt="Victor Miracle">
+
+<div class="profile-info">
+
+<div class="profile-vm">
+VM
+</div>
+
+<strong>
+Victor Miracle
+</strong>
+
+<span>
+GRAPHIC & UI/UX DESIGNER
+</span>
+
+</div>
+
+</div>
+
+
+<div class="vm-badge">
+VM
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section class="services">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-label">
-      What I Do
-    </div>
+<div class="section-label">
+What I Do
+</div>
 
-    <h2 class="section-title">
-      Creative design.<br>
-      Digital experience.
-    </h2>
+<h2 class="section-title">
 
-    <p class="section-subtitle">
-      I focus on two areas that combine visual creativity
-      with modern digital experiences.
-    </p>
+Creative design.<br>
+Digital experience.
 
+</h2>
 
-    <div class="service-grid">
+<p class="section-subtitle">
 
-      <div class="service-card">
+I focus on two areas that combine visual creativity
+with modern digital experiences.
 
-        <div class="service-number">
-          01 / GRAPHIC DESIGN
-        </div>
-
-        <h3>Graphic Design</h3>
-
-        <p>
-          Posters, social media graphics, branding,
-          advertisements and visual communication.
-        </p>
-
-      </div>
+</p>
 
 
-      <div class="service-card">
+<div class="service-grid">
 
-        <div class="service-number">
-          02 / DIGITAL DESIGN
-        </div>
 
-        <h3>UI/UX & Front-End Design</h3>
+<div class="service-card">
 
-        <p>
-          Clean interfaces and responsive digital
-          experiences for websites and applications.
-        </p>
+<div class="service-number">
+01 / GRAPHIC DESIGN
+</div>
 
-      </div>
+<h3>
+Graphic Design
+</h3>
 
-    </div>
+<p>
 
-  </div>
+Posters, social media graphics, branding,
+advertisements and visual communication.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">
+02 / DIGITAL DESIGN
+</div>
+
+<h3>
+UI/UX & Front-End Design
+</h3>
+
+<p>
+
+Clean interfaces and responsive digital
+experiences for websites and applications.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- WORK -->
+<!-- ================= WORK ================= -->
 
 <section id="work">
 
-  <div class="container">
-
-    <div class="work-header">
-
-      <div>
-
-        <div class="section-label">
-          Selected Work
-        </div>
-
-        <h2 class="section-title">
-          My work.
-        </h2>
-
-      </div>
-
-      <p class="section-subtitle">
-        Real graphic design and digital interface projects.
-      </p>
-
-    </div>
+<div class="container">
 
 
-    <!-- FINTECH -->
+<div class="work-header">
 
-    <div class="featured-work">
+<div>
 
-      <img
-        src="./fintech-real.jpg"
-        alt="Fintech Wallet UI">
+<div class="section-label">
+Selected Work
+</div>
 
-      <div class="featured-info">
+<h2 class="section-title">
+My work.
+</h2>
 
-        <div>
-          <h3>Fintech Wallet UI</h3>
-          <p>UI/UX & Front-End Design</p>
-        </div>
-
-        <span class="tag">
-          UI / UX
-        </span>
-
-      </div>
-
-    </div>
+</div>
 
 
-    <!-- GRAPHIC DESIGNS -->
+<p class="section-subtitle">
 
-    <div class="work-grid">
+Real graphic design and digital interface projects.
 
-      <div class="work-item">
+</p>
 
-        <div class="work-image">
-          <img
-            src="graphic-01.jpg"
-            alt="Graphic Design 01">
-        </div>
-
-        <div class="work-info">
-          <h3>Graphic Design</h3>
-          <span>01</span>
-        </div>
-
-      </div>
+</div>
 
 
-      <div class="work-item">
+<!-- FINTECH -->
 
-        <div class="work-image">
-          <img
-            src="graphic-02.jpg"
-            alt="Graphic Design 02">
-        </div>
+<div class="featured-work">
 
-        <div class="work-info">
-          <h3>Graphic Design</h3>
-          <span>02</span>
-        </div>
+<img
+src="./fintech-real.jpg"
+alt="Fintech Wallet UI">
 
-      </div>
+<div class="featured-info">
+
+<div>
+
+<h3>
+Fintech Wallet UI
+</h3>
+
+<p>
+UI/UX & Front-End Design
+</p>
+
+</div>
+
+<span class="tag">
+UI / UX
+</span>
+
+</div>
+
+</div>
 
 
-      <div class="work-item">
+<!-- GRAPHIC WORK -->
 
-        <div class="work-image">
-          <img
-            src="graphic-03.jpg"
-            alt="Product Graphic Design">
-        </div>
-
-        <div class="work-info">
-          <h3>Product Design</h3>
-          <span>03</span>
-        </div>
-
-      </div>
+<div class="work-grid">
 
 
-      <div class="work-item">
+<div class="work-item">
 
-        <div class="work-image">
-          <img
-            src="graphic-04.jpg"
-            alt="Brand Graphic Design">
-        </div>
+<div class="work-image">
 
-        <div class="work-info">
-          <h3>Brand Design</h3>
-          <span>04</span>
-        </div>
+<img
+src="graphic-01.jpg"
+alt="Graphic Design 01">
 
-      </div>
+</div>
 
-    </div>
+<div class="work-info">
 
-  </div>
+<h3>
+Graphic Design
+</h3>
+
+<span>
+01
+</span>
+
+</div>
+
+</div>
+
+
+<div class="work-item">
+
+<div class="work-image">
+
+<img
+src="graphic-02.jpg"
+alt="Graphic Design 02">
+
+</div>
+
+<div class="work-info">
+
+<h3>
+Graphic Design
+</h3>
+
+<span>
+02
+</span>
+
+</div>
+
+</div>
+
+
+<div class="work-item">
+
+<div class="work-image">
+
+<img
+src="graphic-03.jpg"
+alt="Product Graphic Design">
+
+</div>
+
+<div class="work-info">
+
+<h3>
+Product Design
+</h3>
+
+<span>
+03
+</span>
+
+</div>
+
+</div>
+
+
+<div class="work-item">
+
+<div class="work-image">
+
+<img
+src="graphic-04.jpg"
+alt="Brand Graphic Design">
+
+</div>
+
+<div class="work-info">
+
+<h3>
+Brand Design
+</h3>
+
+<span>
+04
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
-  <div class="container">
+<div class="container">
 
-    <div class="about-grid">
-
-      <div class="about-photo">
-
-        <img
-          src="victor-miracle.jpg"
-          alt="Victor Miracle">
-
-      </div>
+<div class="about-grid">
 
 
-      <div class="about-copy">
+<div class="about-photo">
 
-        <div class="section-label">
-          About Me
-        </div>
+<img
+src="victor-miracle.jpg"
+alt="Victor Miracle">
 
-        <h2>
-          Design with<br>
-          purpose.
-        </h2>
+</div>
 
-        <p>
-          I'm Victor Miracle, a Graphic Designer and
-          UI/UX & Front-End Designer focused on creating
-          clean, modern and professional visual experiences.
-        </p>
 
-        <div class="tools">
+<div class="about-copy">
 
-          <span class="tool">CorelDRAW</span>
-          <span class="tool">Figma</span>
-          <span class="tool">Photoshop</span>
-          <span class="tool">Illustrator</span>
-          <span class="tool">HTML</span>
-          <span class="tool">CSS</span>
+<div class="section-label">
+About Me
+</div>
 
-        </div>
+<h2>
 
-      </div>
+Design with<br>
+purpose.
 
-    </div>
+</h2>
 
-  </div>
+
+<p>
+
+I'm Victor Miracle, a Graphic Designer and
+UI/UX & Front-End Designer focused on creating
+clean, modern and professional visual experiences.
+
+</p>
+
+
+<div class="tools">
+
+<span class="tool">
+CorelDRAW
+</span>
+
+<span class="tool">
+Figma
+</span>
+
+<span class="tool">
+Photoshop
+</span>
+
+<span class="tool">
+Illustrator
+</span>
+
+<span class="tool">
+HTML
+</span>
+
+<span class="tool">
+CSS
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
-  <div class="container">
+<div class="container">
 
-    <div class="contact-grid">
-
-      <div class="contact-copy">
-
-        <div class="section-label">
-          Start a Project
-        </div>
-
-        <h2>
-          Let's create<br>
-          something.
-        </h2>
-
-        <p>
-          Have a design idea? Tell me what you need
-          and I'll get back to you.
-        </p>
-
-        <div class="contact-details">
-
-          <div>
-            Email:
-            <a href="mailto:miraclev188@gmail.com">
-              miraclev188@gmail.com
-            </a>
-          </div>
-
-          <div>
-            WhatsApp:
-            <a
-              href="https://wa.me/2347065273868"
-              target="_blank">
-              07065273868
-            </a>
-          </div>
-
-        </div>
-
-      </div>
+<div class="contact-grid">
 
 
-      <!-- REQUEST FORM -->
+<div class="contact-copy">
 
-      <form
-        class="project-form"
-        action="mailto:miraclev188@gmail.com"
-        method="post"
-        enctype="text/plain">
-<!-- NAME -->
-<div class="field">
-  <label for="name">Your Name</label>
+<div class="section-label">
+Start a Project
+</div>
 
-  <input
-    type="text"
-    id="name"
-    name="Name"
-    placeholder="Your name"
-    autocomplete="name"
-    inputmode="text"
-    required>
+<h2>
+
+Let's create<br>
+something.
+
+</h2>
+
+
+<p>
+
+Have a design idea? Tell me what you need
+and I'll get back to you.
+
+</p>
+
+
+<div class="contact-details">
+
+<div>
+
+Email:
+
+<a href="mailto:miraclev188@gmail.com">
+
+miraclev188@gmail.com
+
+</a>
+
 </div>
 
 
-<!-- EMAIL -->
-<div class="field">
-  <label for="email">Your Email</label>
+<div>
 
-  <input
-    type="email"
-    id="email"
-    name="Email"
-    placeholder="you@example.com"
-    autocomplete="email"
-    inputmode="email"
-    autocapitalize="none"
-    spellcheck="false"
-    required>
+WhatsApp:
+
+<a
+href="https://wa.me/2347065273868"
+target="_blank">
+
+07065273868
+
+</a>
+
+</div>
+
+</div>
+
 </div>
 
 
-        <div class="field">
+<!-- PROJECT FORM -->
 
-          <label for="service">
-            What do you need?
-          </label>
-
-          <select
-            id="service"
-            name="Service"
-            required>
-
-            <option value="">
-              Select a service
-            </option>
-
-            <option value="Graphic Design">
-              Graphic Design
-            </option>
-
-            <option value="UI/UX & Front-End Design">
-              UI/UX & Front-End Design
-            </option>
-
-            <option value="Other">
-              Other
-            </option>
-
-          </select>
-
-        </div>
+<form
+class="project-form"
+action="mailto:miraclev188@gmail.com"
+method="post"
+enctype="text/plain">
 
 
-        <div class="field">
-
-  <label for="budget">
-    Budget (Optional)
-  </label>
-
-  <input
-    type="number"
-    id="budget"
-    name="Budget"
-    placeholder="e.g. 50000"
-    inputmode="numeric"
-    min="0"
-    step="100">
-
-        </div>
+<div class="form-row">
 
 
-        <div class="field">
+<div class="field">
 
-  <label for="details">
-    Project Details
-  </label>
+<label for="name">
+Your Name
+</label>
 
-  <textarea
-    id="details"
-    name="Project Details"
-    placeholder="Tell me what you would like me to design..."
-    autocomplete="off"
-    required></textarea>
+<input
+type="text"
+id="name"
+name="Name"
+placeholder="Your name"
+autocomplete="name"
+inputmode="text"
+required>
 
-        </div>
+</div>
 
 
-        <button
-          type="submit"
-          class="btn btn-primary"
-          style="width:100%;border:0;">
+<div class="field">
 
-          Send Project Request
+<label for="email">
+Your Email
+</label>
 
-        </button>
+<input
+type="email"
+id="email"
+name="Email"
+placeholder="you@example.com"
+autocomplete="email"
+inputmode="email"
+autocapitalize="none"
+spellcheck="false"
+required>
 
-        <p class="form-note">
-          Your request will be sent to
-          miraclev188@gmail.com.
-        </p>
+</div>
 
-      </form>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="field">
+
+<label for="service">
+What do you need?
+</label>
+
+<select
+id="service"
+name="Service"
+required>
+
+<option value="">
+Select a service
+</option>
+
+<option value="Graphic Design">
+Graphic Design
+</option>
+
+<option value="UI/UX & Front-End Design">
+UI/UX & Front-End Design
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label for="budget">
+Budget (Optional)
+</label>
+
+<input
+type="number"
+id="budget"
+name="Budget"
+placeholder="e.g. 50000"
+inputmode="numeric"
+min="0"
+step="100">
+
+</div>
+
+
+<div class="field">
+
+<label for="details">
+Project Details
+</label>
+
+<textarea
+id="details"
+name="Project Details"
+placeholder="Tell me what you would like me to design..."
+autocomplete="off"
+required></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="btn btn-primary"
+style="width:100%;border:0;">
+
+Send Project Request
+
+</button>
+
+
+<p class="form-note">
+
+Your request will be sent to
+miraclev188@gmail.com.
+
+</p>
+
+
+</form>
+
+</div>
+
+</div>
 
 </section>
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <div class="footer-inner">
+<div class="footer-inner">
 
-    <p>
-      © 2026 Victor Miracle. All rights reserved.
-    </p>
+<p>
+© 2026 Victor Miracle. All rights reserved.
+</p>
 
-    <div class="footer-vm">
-      VM
-    </div>
+<div class="footer-vm">
+VM
+</div>
 
-  </div>
+</div>
 
 </footer>
 
