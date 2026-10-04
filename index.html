@@ -1364,30 +1364,34 @@ footer{
 
         <div class="field">
 
-          <label for="budget">
-            Budget (Optional)
-          </label>
+  <label for="budget">
+    Budget (Optional)
+  </label>
 
-          <input
-            type="text"
-            id="budget"
-            name="Budget"
-            placeholder="e.g. ₦50,000">
+  <input
+    type="number"
+    id="budget"
+    name="Budget"
+    placeholder="e.g. 50000"
+    inputmode="numeric"
+    min="0"
+    step="100">
 
         </div>
 
 
         <div class="field">
 
-          <label for="details">
-            Project Details
-          </label>
+  <label for="details">
+    Project Details
+  </label>
 
-          <textarea
-            id="details"
-            name="Project Details"
-            placeholder="Tell me what you would like me to design..."
-            required></textarea>
+  <textarea
+    id="details"
+    name="Project Details"
+    placeholder="Tell me what you would like me to design..."
+    autocomplete="off"
+    required></textarea>
 
         </div>
 
